@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+*.gradle.bak
+gradle-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDE 설정
+.vscode/
+*.swp
+*.swo
+*~
+
+# 환경 설정
+.env
+.env.local
+application-local.yml
+application-dev.yml

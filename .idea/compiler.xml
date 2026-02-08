@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="coupang-clone.common.main" />
+        <module name="coupang-clone.domain.main" />
+        <module name="coupang-clone.infra.main" />
+        <module name="coupang-clone.api-admin.main" />
+        <module name="com.coupang.clone.coupang-clone.api-customer.main" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-customer" options="-parameters" />
+      <module name="api-customer.main" options="-parameters" />
+      <module name="api-customer.test" options="-parameters" />
+      <module name="com.coupang.clone.coupang-clone.api-customer" options="-parameters" />
+      <module name="com.coupang.clone.coupang-clone.api-customer.main" options="-parameters" />
+      <module name="com.coupang.clone.coupang-clone.api-customer.test" options="-parameters" />
+      <module name="coupang-clone.api-admin" options="-parameters" />
+      <module name="coupang-clone.api-admin.main" options="-parameters" />
+      <module name="coupang-clone.api-admin.test" options="-parameters" />
+    </option>
+  </component>
+</project>
