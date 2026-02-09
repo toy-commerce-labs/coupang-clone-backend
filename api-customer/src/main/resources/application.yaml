@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: api-customer
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/coupang_customer?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: Y291cGFuZy1jbG9uZS1zZWNyZXQta2V5LWZvci1qd3QtdG9rZW4tMjAyNg==
+  expiration: 3600000
