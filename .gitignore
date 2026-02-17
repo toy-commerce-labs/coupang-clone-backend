@@ -27,3 +27,16 @@ out/
 .env.local
 application-local.yml
 application-dev.yml
+
+# Windows
+nul
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 빌드 결과물
+*.jar
+*.war
+*.ear
+*.class
+bin/
