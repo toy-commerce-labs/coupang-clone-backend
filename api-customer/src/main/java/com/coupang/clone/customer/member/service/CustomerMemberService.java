@@ -24,7 +24,7 @@ public class CustomerMemberService {
 
     public LoginResponse login(LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUserId(), request.getPassword())
+                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
         );
 
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();

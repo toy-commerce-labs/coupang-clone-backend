@@ -22,7 +22,6 @@ public class MemberDataInitializer {
             }
 
             memberRepository.save(Member.builder()
-                    .userId("kim123")
                     .name("김쿠팡")
                     .password(passwordEncoder.encode("password123"))
                     .phone("010-1234-5678")
@@ -33,7 +32,6 @@ public class MemberDataInitializer {
                     .build());
 
             memberRepository.save(Member.builder()
-                    .userId("lee123")
                     .name("이로켓")
                     .password(passwordEncoder.encode("password123"))
                     .phone("010-2345-6789")
@@ -44,7 +42,6 @@ public class MemberDataInitializer {
                     .build());
 
             memberRepository.save(Member.builder()
-                    .userId("park123")
                     .name("박배송")
                     .password(passwordEncoder.encode("password123"))
                     .phone("010-3456-7890")
@@ -55,7 +52,6 @@ public class MemberDataInitializer {
                     .build());
 
             memberRepository.save(Member.builder()
-                    .userId("choi123")
                     .name("최할인")
                     .password(passwordEncoder.encode("password123"))
                     .phone("010-4567-8901")
@@ -66,7 +62,6 @@ public class MemberDataInitializer {
                     .build());
 
             memberRepository.save(Member.builder()
-                    .userId("admin")
                     .name("관리자")
                     .password(passwordEncoder.encode("admin1234"))
                     .phone("010-0000-0000")

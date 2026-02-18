@@ -30,15 +30,13 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
     private Long id;
-    @Column(length = 50, unique = true, nullable = false)
-    private String userId;
     @Column(length = 100)
     private String name;
     @Column(length = 255)
     private String password;
     @Column(length = 20)
     private String phone;
-    @Column(length = 255)
+    @Column(length = 255, unique = true, nullable = false)
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;
