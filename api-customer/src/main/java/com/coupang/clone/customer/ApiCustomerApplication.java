@@ -9,9 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = "com.coupang.clone.domain")
 @EnableJpaRepositories(basePackages = "com.coupang.clone.domain")
 public class ApiCustomerApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(ApiCustomerApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(ApiCustomerApplication.class, args);
+    }
 }

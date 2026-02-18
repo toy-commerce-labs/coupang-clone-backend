@@ -1,16 +1,18 @@
 package com.coupang.clone.infra.jwt;
 
-import com.coupang.clone.common.exception.CustomException;
-import com.coupang.clone.common.exception.ErrorCode;
-import io.jsonwebtoken.*;
-import io.jsonwebtoken.security.Keys;
-import jakarta.annotation.PostConstruct;
+import java.util.Base64;
+import java.util.Date;
+
+import javax.crypto.SecretKey;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.crypto.SecretKey;
-import java.util.Base64;
-import java.util.Date;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 
 @Component
 public class JwtTokenProvider {
@@ -19,30 +21,30 @@ public class JwtTokenProvider {
     private String secret;
 
     @Value("${jwt.expiration}")
-    private long expirationMillis;
+    private long expiration;
 
-    private SecretKey secretKey;
+    private SecretKey key;
 
     @PostConstruct
-    protected void init() {
+    public void init() {
         byte[] keyBytes = Base64.getDecoder().decode(secret);
-        this.secretKey = Keys.hmacShaKeyFor(keyBytes);
+        this.key = Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public String createToken(String email, String role) {
+    public String createToken(String userId, String role) {
         Date now = new Date();
-        Date expiry = new Date(now.getTime() + expirationMillis);
+        Date expiryDate = new Date(now.getTime() + expiration);
 
         return Jwts.builder()
-                .subject(email)
+                .subject(userId)
                 .claim("role", role)
                 .issuedAt(now)
-                .expiration(expiry)
-                .signWith(secretKey)
+                .expiration(expiryDate)
+                .signWith(key)
                 .compact();
     }
 
-    public String getEmail(String token) {
+    public String getUserId(String token) {
         return parseClaims(token).getSubject();
     }
 
@@ -55,15 +57,15 @@ public class JwtTokenProvider {
             parseClaims(token);
             return true;
         } catch (ExpiredJwtException e) {
-            throw new CustomException(ErrorCode.EXPIRED_TOKEN);
-        } catch (JwtException | IllegalArgumentException e) {
-            throw new CustomException(ErrorCode.INVALID_TOKEN);
+            return false;
+        } catch (Exception e) {
+            return false;
         }
     }
 
     private Claims parseClaims(String token) {
         return Jwts.parser()
-                .verifyWith(secretKey)
+                .verifyWith(key)
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();

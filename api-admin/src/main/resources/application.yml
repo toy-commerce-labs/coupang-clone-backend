@@ -3,7 +3,7 @@ spring:
     name: api-admin
 
   datasource:
-    url: jdbc:mysql://localhost:3306/coupang_admin?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/coupang?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
     username: root
     password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
