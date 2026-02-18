@@ -30,6 +30,8 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")
     private Long id;
+    @Column(length = 50, unique = true)
+    private String userId;  // 관리자 전용 로그인 ID (일반 회원은 null)
     @Column(length = 100)
     private String name;
     @Column(length = 255)
