@@ -9,16 +9,18 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ErrorCode {
 
-    INVALID_EMAIL_OR_PASSWORD(HttpStatus.UNAUTHORIZED, "이메일 또는 비밀번호가 올바르지 않습니다."),
-    MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "회원을 찾을 수 없습니다."),
-    DUPLICATE_EMAIL(HttpStatus.CONFLICT, "이미 사용 중인 이메일입니다."),
-    REQUIRED_TERMS_NOT_AGREED(HttpStatus.BAD_REQUEST, "필수 약관에 모두 동의해야 합니다."),
-    TERMS_NOT_FOUND(HttpStatus.NOT_FOUND, "존재하지 않는 약관입니다."),
-    INVALID_TOKEN(HttpStatus.UNAUTHORIZED, "유효하지 않은 토큰입니다."),
-    EXPIRED_TOKEN(HttpStatus.UNAUTHORIZED, "만료된 토큰입니다."),
-    ACCESS_DENIED(HttpStatus.FORBIDDEN, "접근 권한이 없습니다."),
-    INVALID_INPUT_VALUE(HttpStatus.BAD_REQUEST, "입력값이 올바르지 않습니다.");
+    INVALID_EMAIL_OR_PASSWORD(HttpStatus.UNAUTHORIZED, "?대찓???먮뒗 鍮꾨?踰덊샇媛 ?щ컮瑜댁? ?딆뒿?덈떎."),
+    MEMBER_NOT_FOUND(HttpStatus.NOT_FOUND, "?뚯썝??李얠쓣 ???놁뒿?덈떎."),
+    PRODUCT_NOT_FOUND(HttpStatus.NOT_FOUND, "Product not found."),
+    DUPLICATE_EMAIL(HttpStatus.CONFLICT, "?대? ?ъ슜 以묒씤 ?대찓?쇱엥?덈떎."),
+    REQUIRED_TERMS_NOT_AGREED(HttpStatus.BAD_REQUEST, "?꾩닔 ?쎄???紐⑤몢 ?숈쓽?댁빞 ?⑸땲??"),
+    TERMS_NOT_FOUND(HttpStatus.NOT_FOUND, "議댁옱?섏? ?딅뒗 ?쎄??낅땲??"),
+    INVALID_TOKEN(HttpStatus.UNAUTHORIZED, "?좏슚?섏? ?딆? ?좏겙?낅땲??"),
+    EXPIRED_TOKEN(HttpStatus.UNAUTHORIZED, "留뚮즺???좏겙?낅땲??"),
+    ACCESS_DENIED(HttpStatus.FORBIDDEN, "?묎렐 沅뚰븳???놁뒿?덈떎."),
+    INVALID_INPUT_VALUE(HttpStatus.BAD_REQUEST, "?낅젰媛믪씠 ?щ컮瑜댁? ?딆뒿?덈떎.");
 
     private final HttpStatus httpStatus;
     private final String message;
 }
+
